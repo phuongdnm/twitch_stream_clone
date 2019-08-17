@@ -54,6 +54,3 @@ export const deleteStream = id => {
     dispatch({ type: DELETE_STREAM, payload: id });
   };
 };
-
-
-// VIDEO 8
