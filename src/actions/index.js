@@ -22,7 +22,7 @@ export const createStream = formValues => {
     const response = await streams.post('/streams', { ...formValues, userId });
 
     dispatch({ type: CREATE_STREAM, payload: response.data });
-    // Get the user back to the root route  
+    // Get the user back to the root route
     history.push('/');
   };
 };
@@ -59,4 +59,3 @@ export const deleteStream = id => {
     dispatch({ type: DELETE_STREAM, payload: id });
   };
 };
-
