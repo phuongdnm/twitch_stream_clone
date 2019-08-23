@@ -93,7 +93,7 @@ You can follow these steps to deploy a new stream to the app:
 1. Sign in using your google account (It's totally **safe** 😉).
 2. Create a new stream using the "Create a stream" button.
 3. Click on the stream you've just created. You will see something like this:
-   ![Show stream](https://www.dropbox.com/s/0qyg1q3eo4i1e3x/test_stream.png?dl=1)
+   ![Show stream](https://dl.dropboxusercontent.com/s/0qyg1q3eo4i1e3x/test_stream.png?dl=1)
 4. Now open OBS and create a new stream:
 
 - Create new scene in "Scenes" section.
