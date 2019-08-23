@@ -1,68 +1,124 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+	<h1 align="center">Twitch clone app</h1>
+	<p align="center"> A streaming website created by React, Redux, Google 			APIs and more
+	</p>
+</p>
 
-## Available Scripts
+<!-- TABLE OF CONTENTS -->
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [About the Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Project Structure](#project-structure)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<!-- ABOUT THE PROJECT -->
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## About The Project
 
-### `npm test`
+A quick demo: _stream my screen using OBS_
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Demo](https://www.dropbox.com/s/ecg4fjwub344ure/demo.gif?dl=1)
 
-### `npm run build`
+Why do I create this project:
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- To practice my React and Redux skills.
+- To explore and dive into OAuth 2.0 and Google APIs.
+- Learn how a RTMP server works.
+- Kill my free time 😅.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Built With
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [React](https://reactjs.org/) (of course 🙃)
+- [Redux](https://redux.js.org/), [Redux-form](https://redux-form.com/8.2.2/)
+- [json-server](https://github.com/typicode/json-server), [node-media-server](https://github.com/illuspas/Node-Media-Server)
 
-### `npm run eject`
+<!-- GETTING STARTED -->
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Getting Started
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Since this is just a fun project, I decide not to deploy this app online. So you can follow these steps to run it locally!
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Prerequisites
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Make sure you have Node, npm and React in your machine. But you also need [OBS](https://obsproject.com/) to push a stream to the website!
 
-## Learn More
+### Project structure:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+├── stream
+    ├── client
+    ├── stream_apis
+    ├── streams_rtmpserver
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Installation
 
-### Code Splitting
+1. Create project directory in your machine:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```sh
+mkdir streams
+cd streams/
+```
 
-### Analyzing the Bundle Size
+3. Clone the repositories:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```sh
+git clone https://github.com/phuongminh2303/twitch_stream_clone.git
+git clone https://github.com/phuongminh2303/stream_api.git
+git clone https://github.com/phuongminh2303/streams_rtmpserver.git
+```
 
-### Making a Progressive Web App
+4. Install NPM packages in **each folder** of the project:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```sh
+npm install
+```
 
-### Advanced Configuration
+5. Run all the **client server**, **api server** and **rtmp server** at the same time:
+   ![Start server](https://dl.dropboxusercontent.com/s/9l5k7a7f3k5t33u/start_server.gif?dl=0)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+<!-- USAGE EXAMPLES -->
 
-### Deployment
+## Usage
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+You can follow these steps to deploy a new stream to the app:
 
-### `npm run build` fails to minify
+1. Sign in using your google account (It's totally **safe** 😉).
+2. Create a new stream using the "Create a stream" button.
+3. Click on the stream you've just created. You will see something like this:
+   ![Show stream](https://www.dropbox.com/s/0qyg1q3eo4i1e3x/test_stream.png?dl=1)
+4. Now open OBS and create a new stream:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Create new scene in "Scenes" section.
+- In the "Sources" section, add "Screen Capture (XSHM)" and "Audio Input Capture".
+- Next, open Settings/Stream, then choose "Custom..." in Service section.
+- Add this line to the Server section: `rtmp://localhost/live`
+- Put your stream id into the "Stream Key" section, **stream id** can be found in your stream url:
+  -- In this example, my stream url is: _localhost:3000/streams/5_. So my **stream id** is 5!
+- Click Ok then start your stream. Go back to the website and enjoy!!! 😙
+- Sometime you need to refresh the page after starting a new stream.
+
+<!-- ROADMAP -->
+
+## Roadmap
+
+My only plan for this project is the UI. I will improve the layout, colors, reponsiveness very soon!
+
+<!-- CONTRIBUTING -->
+
+## Contributing
+
+Feel free to contribute to this awful project! I always want to learn new stuffs!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
