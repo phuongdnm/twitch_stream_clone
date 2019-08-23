@@ -11,9 +11,9 @@ class StreamShow extends React.Component {
   }
 
   componentDidMount() {
-    const {id} = this.props.match.params;
+    const { id } = this.props.match.params;
     this.props.fetchStream(id);
-    
+
     this.buildPlayer();
   }
 
@@ -22,15 +22,15 @@ class StreamShow extends React.Component {
   }
 
   buildPlayer() {
-    if (this.player || !this.props.stream){
+    if (this.player || !this.props.stream) {
       return;
     }
-    const {id} = this.props.match.params;
+    const { id } = this.props.match.params;
 
     /* Original code can be found in Node-Media-Server github page. You also need to customize OBS (instructions is in the same page) */
     this.player = flv.createPlayer({
       type: 'flv',
-      url: `https://localhost:8000/live/${id}.flv`
+      url: `http://localhost:8000/live/${id}.flv`
     });
     this.player.attachMediaElement(this.videoRef.current);
     this.player.load();
