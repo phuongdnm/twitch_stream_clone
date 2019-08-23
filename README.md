@@ -24,7 +24,7 @@
 
 A quick demo: _stream my screen using OBS_
 
-![Demo](https://www.dropbox.com/s/ecg4fjwub344ure/demo.gif?dl=1)
+![Demo](https://www.dl.dropboxusercontent.com/s/ecg4fjwub344ure/demo.gif?dl=0)
 
 Why do I create this project:
 
